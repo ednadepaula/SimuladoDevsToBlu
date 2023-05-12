@@ -10,6 +10,7 @@ namespace simulado1205
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("oi");
         }
     }
 }

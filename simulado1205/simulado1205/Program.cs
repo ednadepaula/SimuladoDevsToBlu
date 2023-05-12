@@ -16,7 +16,10 @@ namespace simulado1205
             //Obs: O codigo(program.cs) deve ser upado no github, e a resposta ser o link do repositório.Caso não consiga,
             //inserir o program.cs na entrega da atividade pelo classroom
 
+            // NÃO CONSEGUI FAZER
 
+
+            /*******************************************************************************************************/
 
             //2 - Crie um programa em C# que recebe uma string e verifica se ela é um palíndromo, ou seja,
             //se pode ser lida da mesma forma tanto da esquerda para a direita quanto da direita para a esquerda.
@@ -60,23 +63,49 @@ namespace simulado1205
             }*/
 
 
+            /*******************************************************************************************************/
+
             //3 - Ordenar uma lista de números sem utilizar os métodos da linguagem.
             //Crie um programa em C# que recebe uma lista de números inteiros e ordena essa lista em ordem crescente.
             //Exiba a lista ordenada na tela.
 
             List<int> listaDeNumeros = new List<int>();
             List<int> listaOrdenada = new List<int>();
+            int minimo;
 
             Console.WriteLine("Digite uma sequencia de numeros:");
-            Console.WriteLine("A - Digite o numero");
-            Console.WriteLine("B - finalizar");
-            char op = char.Parse(Console.ReadLine());
+            char op;
 
-            while (op != 'B')
+            do
             {
-                Console.WriteLine("Digite o numero");
-                int numero = int.Parse(Console.ReadLine());
-                listaDeNumeros.Add(numero);
+                Console.WriteLine("A - Digitar o numero");
+                Console.WriteLine("B - finalizar");
+                op = char.ToUpper(char.Parse(Console.ReadLine()));
+
+                if (op == 'A')
+                {
+                    Console.WriteLine("Digite o numero");
+                    int numero = int.Parse(Console.ReadLine());
+                    listaDeNumeros.Add(numero);
+                }
+                                
+
+            } while (op != 'B');
+
+            int tamanhoLista = listaDeNumeros.Count;
+            
+            for (int i = 0; i <= tamanhoLista; i++)
+            {
+                minimo = listaDeNumeros.Min();
+                listaOrdenada.Add(minimo);
+                listaOrdenada[i] = minimo;
+                listaDeNumeros.Remove(minimo);
+
+                Console.WriteLine("\n lista ordenada");
+                foreach (int n in listaOrdenada)
+                    {
+                        Console.WriteLine(n);
+                    }
             }
 
 

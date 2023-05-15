@@ -18,6 +18,50 @@ namespace simulado1205
 
             // NÃO CONSEGUI FAZER
 
+            char[] forca = new char[5] { 'F', 'O', 'R','C','A'};
+            char[] palavraJogador = new char[forca.Length];
+            Console.WriteLine("**********************--JOGO DA FORCA--******************************");
+            Console.WriteLine($"A palavra possui {forca.Length} letras");
+
+            for(int i = 0; i < forca.Length; i++) 
+            {
+                while(i < forca.Length)
+                {
+                    Console.WriteLine("Digite uma letra:");
+                    palavraJogador[i] = char.ToUpper(char.Parse(Console.ReadLine()));
+                    if (palavraJogador[i] == forca[i])
+                    {
+                        Console.WriteLine("letra correta!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("letra incorreta");
+                        palavraJogador[i] = ' ';
+                    }   
+                    i++;
+                }
+                Console.WriteLine("\nJogo finalizado!\n");
+                Console.Write("\nPalavra correta: ");
+                for(i = 0; i < forca.Length; i++)
+                {
+                    Console.Write(" " + forca[i]);
+                }
+
+                Console.Write("\nPalavra digitada: ");
+                for (i = 0; i < forca.Length; i++)
+                {
+                    Console.Write(" " + palavraJogador[i]);
+                }
+
+            }
+            
+
+
+
+
+
+
+
 
             /*******************************************************************************************************/
 
@@ -69,7 +113,7 @@ namespace simulado1205
             //Crie um programa em C# que recebe uma lista de números inteiros e ordena essa lista em ordem crescente.
             //Exiba a lista ordenada na tela.
 
-            List<int> listaDeNumeros = new List<int>();
+            /*List<int> listaDeNumeros = new List<int>();
             List<int> listaOrdenada = new List<int>();
             int minimo;
 
@@ -106,7 +150,7 @@ namespace simulado1205
                     {
                         Console.WriteLine(n);
                     }
-            }
+            }*/
 
 
             Console.ReadKey();
